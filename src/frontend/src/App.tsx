@@ -41,14 +41,17 @@ function Navbar() {
               {id}
             </button>
           ))}
-          <button
-            type="button"
+          <a
+            href={
+              "https://mail.google.com/mail/?view=cm&to=gdaayushman@gmail.com&su=Hire Request – GD Aayushman&body=Hi Aayushman,%0A%0APlease fill in the details below:%0A%0A1. Your Name:%0A2. Your Work / Business:%0A3. What do you want me to design / create:%0A4. How long do you need me (Full Time / Part Time):%0A5. Project deadline or timeline:%0A%0ALooking forward to working with you!"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
             data-ocid="nav.link"
-            onClick={() => scrollTo("contact")}
             className="btn-gradient text-sm font-semibold px-5 py-2 rounded-full"
           >
             Hire Me
-          </button>
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -100,14 +103,17 @@ function Navbar() {
               {id}
             </button>
           ))}
-          <button
-            type="button"
+          <a
+            href={
+              "https://mail.google.com/mail/?view=cm&to=gdaayushman@gmail.com&su=Hire Request – GD Aayushman&body=Hi Aayushman,%0A%0APlease fill in the details below:%0A%0A1. Your Name:%0A2. Your Work / Business:%0A3. What do you want me to design / create:%0A4. How long do you need me (Full Time / Part Time):%0A5. Project deadline or timeline:%0A%0ALooking forward to working with you!"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
             data-ocid="nav.link"
-            onClick={() => scrollTo("contact")}
             className="btn-gradient text-sm font-semibold px-5 py-2.5 rounded-full text-center"
           >
             Hire Me
-          </button>
+          </a>
         </div>
       )}
     </header>
@@ -128,9 +134,6 @@ function HeroSection() {
     document
       .getElementById("portfolio")
       ?.scrollIntoView({ behavior: "smooth" });
-  const scrollToContact = () =>
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-
   return (
     <section
       data-ocid="hero.section"
@@ -210,14 +213,17 @@ function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up"
           style={{ animationDelay: "1.1s" }}
         >
-          <button
-            type="button"
+          <a
+            href={
+              "https://mail.google.com/mail/?view=cm&to=gdaayushman@gmail.com&su=Hire Request – GD Aayushman&body=Hi Aayushman,%0A%0APlease fill in the details below:%0A%0A1. Your Name:%0A2. Your Work / Business:%0A3. What do you want me to design / create:%0A4. How long do you need me (Full Time / Part Time):%0A5. Project deadline or timeline:%0A%0ALooking forward to working with you!"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
             data-ocid="hero.primary_button"
-            onClick={scrollToContact}
             className="btn-gradient font-semibold text-base px-8 py-3.5 rounded-full shadow-glow"
           >
             Hire Me
-          </button>
+          </a>
           <button
             type="button"
             data-ocid="hero.secondary_button"
@@ -230,13 +236,12 @@ function HeroSection() {
 
         {/* Floating stats */}
         <div
-          className="mt-16 grid grid-cols-3 gap-6 max-w-sm mx-auto animate-fade-in"
+          className="mt-16 grid grid-cols-2 gap-6 max-w-xs mx-auto animate-fade-in"
           style={{ animationDelay: "1.4s" }}
         >
           {[
             { value: "50+", label: "Projects" },
-            { value: "30+", label: "Clients" },
-            { value: "3+", label: "Years" },
+            { value: "2+", label: "Years Experience" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="font-display font-black text-2xl gradient-text">
@@ -377,9 +382,7 @@ function AboutSection() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { value: "50+", label: "Projects Completed" },
-                { value: "30+", label: "Happy Clients" },
-                { value: "3+", label: "Years of Experience" },
-                { value: "100%", label: "Client Satisfaction" },
+                { value: "2+", label: "Years of Experience" },
               ].map((s) => (
                 <div key={s.label} className="glass-card rounded-xl p-4">
                   <div className="font-display font-black text-xl gradient-text">
