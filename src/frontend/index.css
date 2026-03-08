@@ -177,6 +177,18 @@
   animation: gradientShift 4s ease infinite;
 }
 
+/* ===== 3D Hire Me button keyframes ===== */
+@keyframes hireMeFloat {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  50% { transform: translateY(-5px) rotateX(8deg); }
+}
+
+@keyframes hireMeShine {
+  0% { left: -100%; opacity: 0; }
+  20% { opacity: 0.6; }
+  100% { left: 150%; opacity: 0; }
+}
+
 /* ===== Gradient button ===== */
 .btn-gradient {
   background: linear-gradient(135deg, oklch(0.55 0.26 285), oklch(0.50 0.26 248), oklch(0.60 0.22 198));
@@ -190,6 +202,54 @@
 .btn-gradient:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px oklch(0.55 0.26 285 / 0.5);
+}
+
+/* ===== 3D Hire Me button ===== */
+.btn-hire-me {
+  background: linear-gradient(135deg, oklch(0.58 0.26 285), oklch(0.50 0.26 248), oklch(0.62 0.22 198));
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite, hireMeFloat 3s ease-in-out infinite;
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  transition: box-shadow 0.3s ease, transform 0.15s ease;
+  /* 3D bottom edge shadow */
+  box-shadow:
+    0 6px 0 oklch(0.35 0.22 285),
+    0 8px 20px oklch(0.55 0.26 285 / 0.45),
+    inset 0 1px 0 oklch(1 0 0 / 0.25);
+  text-shadow: 0 1px 2px oklch(0 0 0 / 0.4);
+}
+
+.btn-hire-me::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.35), transparent);
+  transform: skewX(-20deg);
+  animation: hireMeShine 2.8s ease-in-out infinite;
+}
+
+.btn-hire-me:hover {
+  animation: gradientShift 3s ease infinite;
+  transform: translateY(-4px) rotateX(10deg);
+  box-shadow:
+    0 10px 0 oklch(0.32 0.22 285),
+    0 14px 35px oklch(0.55 0.26 285 / 0.6),
+    inset 0 1px 0 oklch(1 0 0 / 0.3);
+}
+
+.btn-hire-me:active {
+  transform: translateY(2px) rotateX(0deg);
+  box-shadow:
+    0 2px 0 oklch(0.32 0.22 285),
+    0 4px 12px oklch(0.55 0.26 285 / 0.4);
 }
 
 .btn-outline-glow {

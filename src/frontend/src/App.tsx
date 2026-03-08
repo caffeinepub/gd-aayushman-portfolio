@@ -48,7 +48,7 @@ function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             data-ocid="nav.link"
-            className="btn-gradient text-sm font-semibold px-5 py-2 rounded-full"
+            className="btn-hire-me text-sm font-semibold px-5 py-2 rounded-full"
           >
             Hire Me
           </a>
@@ -110,7 +110,7 @@ function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             data-ocid="nav.link"
-            className="btn-gradient text-sm font-semibold px-5 py-2.5 rounded-full text-center"
+            className="btn-hire-me text-sm font-semibold px-5 py-2.5 rounded-full text-center"
           >
             Hire Me
           </a>
@@ -220,7 +220,7 @@ function HeroSection() {
             target="_blank"
             rel="noopener noreferrer"
             data-ocid="hero.primary_button"
-            className="btn-gradient font-semibold text-base px-8 py-3.5 rounded-full shadow-glow"
+            className="btn-hire-me font-semibold text-base px-8 py-3.5 rounded-full"
           >
             Hire Me
           </a>
@@ -413,45 +413,24 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Brand Identity — TechCorp",
-    category: "Logo Design",
-    img: "/assets/generated/portfolio-techcorp.dim_600x400.jpg",
+    title: "Class 10th – How to Study Science?",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/1000001866-1.png",
     categoryColor: "oklch(0.70 0.22 285)",
   },
   {
     id: 2,
-    title: "Social Media Kit — FoodBrand",
-    category: "Social Media",
-    img: "/assets/generated/portfolio-foodbrand.dim_600x400.jpg",
-    categoryColor: "oklch(0.70 0.20 50)",
+    title: "Class 10 – Complete Civics Marathon",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/1000001865-2.png",
+    categoryColor: "oklch(0.68 0.22 248)",
   },
   {
     id: 3,
-    title: "YouTube Channel Art — VloggerX",
-    category: "YouTube",
-    img: "/assets/generated/portfolio-vloggerx.dim_600x400.jpg",
-    categoryColor: "oklch(0.72 0.19 145)",
-  },
-  {
-    id: 4,
-    title: "Poster Design — MusicFest 2025",
-    category: "Poster",
-    img: "/assets/generated/portfolio-musicfest.dim_600x400.jpg",
-    categoryColor: "oklch(0.68 0.24 310)",
-  },
-  {
-    id: 5,
-    title: "Logo Suite — FitLife Studio",
-    category: "Branding",
-    img: "/assets/generated/portfolio-fitlife.dim_600x400.jpg",
-    categoryColor: "oklch(0.70 0.20 198)",
-  },
-  {
-    id: 6,
-    title: "Instagram Pack — BeautyBrand",
-    category: "Social Media",
-    img: "/assets/generated/portfolio-beautybrand.dim_600x400.jpg",
-    categoryColor: "oklch(0.70 0.18 350)",
+    title: "Class 12 Physics – Chapter 1 Explained",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/1000001864-3.png",
+    categoryColor: "oklch(0.70 0.20 50)",
   },
 ];
 
@@ -555,6 +534,61 @@ function PortfolioSection() {
           {PROJECTS.map((project, i) => (
             <PortfolioCard key={project.id} project={project} delay={i * 0.1} />
           ))}
+        </div>
+
+        {/* Many more note */}
+        <div
+          className="mt-12 text-center animate-fade-in-up"
+          style={{ animationDelay: "0.4s" }}
+        >
+          <div
+            className="inline-flex flex-col sm:flex-row items-center gap-3 px-6 py-4 rounded-2xl"
+            style={{
+              background: "oklch(0.14 0.015 275 / 0.7)",
+              border: "1px solid oklch(0.55 0.26 285 / 0.25)",
+              backdropFilter: "blur(16px)",
+            }}
+          >
+            <div className="flex items-center gap-2">
+              <svg
+                aria-hidden="true"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="oklch(0.72 0.19 198)"
+                strokeWidth="2"
+              >
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon
+                  points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                  fill="oklch(0.72 0.19 198)"
+                  stroke="none"
+                />
+              </svg>
+              <span
+                className="text-sm font-semibold"
+                style={{ color: "oklch(0.85 0.10 285)" }}
+              >
+                Many more YouTube thumbnails like these available
+              </span>
+            </div>
+            <span
+              className="text-xs px-3 py-1 rounded-full font-bold"
+              style={{
+                background: "oklch(0.55 0.26 285 / 0.15)",
+                border: "1px solid oklch(0.55 0.26 285 / 0.35)",
+                color: "oklch(0.80 0.18 285)",
+              }}
+            >
+              50+ Projects Done
+            </span>
+          </div>
+          <p className="text-sm text-muted-foreground mt-3">
+            These are just a few samples from my YouTube thumbnail work. I've
+            designed thumbnails across education, gaming, tech, vlog, and more
+            niches.
+          </p>
         </div>
       </div>
     </section>
