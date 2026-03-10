@@ -5,7 +5,7 @@ import { useInView } from "./hooks/useInView";
 
 /* ─── Constants ─── */
 const HIRE_ME_URL =
-  "https://mail.google.com/mail/?view=cm&to=gdaayushman@gmail.com&su=Hire Request – GD Aayushman&body=Hi Aayushman,%0A%0APlease fill in the details below:%0A%0A1. Your Name:%0A2. Your Work / Business:%0A3. What do you want me to design / create:%0A4. How long do you need me (Full Time / Part Time):%0A5. Project deadline or timeline:%0A%0ALooking forward to working with you!";
+  "mailto:gdaayushman@gmail.com?subject=Hire Request – GD Aayushman&body=Hi Aayushman,%0A%0APlease fill in the details below:%0A%0A1. Your Name:%0A2. Your Work / Business:%0A3. What do you want me to design / create:%0A4. How long do you need me (Full Time / Part Time):%0A5. Project deadline or timeline:%0A%0ALooking forward to working with you!";
 
 /* ─── Navbar ─── */
 function Navbar() {
@@ -712,6 +712,20 @@ const PROJECTS: Project[] = [
     category: "YouTube Thumbnail",
     img: "/assets/uploads/1000001864-3.png",
     categoryColor: "oklch(0.70 0.20 50)",
+  },
+  {
+    id: 4,
+    title: "How to Score 95% in Boards",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/397269da-c900-46b6-8dc0-7675c75879fb-1.png",
+    categoryColor: "oklch(0.68 0.22 140)",
+  },
+  {
+    id: 5,
+    title: "Moving to Class 11 – How to Start",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/Picsart_26-03-09_14-36-07-141-3.png",
+    categoryColor: "oklch(0.68 0.22 30)",
   },
 ];
 
@@ -2051,10 +2065,6 @@ const FOOTER_LINKS = ["about", "portfolio", "services", "process", "contact"];
 
 function Footer() {
   const year = new Date().getFullYear();
-  const hostname =
-    typeof window !== "undefined"
-      ? encodeURIComponent(window.location.hostname)
-      : "";
 
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -2158,14 +2168,6 @@ function Footer() {
           style={{ borderTop: "1px solid oklch(0.18 0.025 275)" }}
         >
           <p>© {year} GD Aayushman. All rights reserved.</p>
-          <a
-            href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${hostname}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground transition-colors duration-200"
-          >
-            Built with ❤️ using caffeine.ai
-          </a>
         </div>
       </div>
     </footer>
