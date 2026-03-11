@@ -694,38 +694,60 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Class 10th – How to Study Science?",
+    title: "90% Students Make This Mistake – Don't Do This",
     category: "YouTube Thumbnail",
-    img: "/assets/uploads/1000001866-1.png",
-    categoryColor: "oklch(0.70 0.22 285)",
+    img: "/assets/uploads/bb1f797c-b1ca-4885-83c8-772a11ad72aa-1.png",
+    categoryColor: "oklch(0.70 0.22 10)",
   },
   {
     id: 2,
-    title: "Class 10 – Complete Civics Marathon",
-    category: "YouTube Thumbnail",
-    img: "/assets/uploads/1000001865-2.png",
-    categoryColor: "oklch(0.68 0.22 248)",
-  },
-  {
-    id: 3,
-    title: "Class 12 Physics – Chapter 1 Explained",
-    category: "YouTube Thumbnail",
-    img: "/assets/uploads/1000001864-3.png",
-    categoryColor: "oklch(0.70 0.20 50)",
-  },
-  {
-    id: 4,
     title: "How to Score 95% in Boards",
     category: "YouTube Thumbnail",
     img: "/assets/uploads/397269da-c900-46b6-8dc0-7675c75879fb-1.png",
     categoryColor: "oklch(0.68 0.22 140)",
   },
   {
-    id: 5,
+    id: 3,
     title: "Moving to Class 11 – How to Start",
     category: "YouTube Thumbnail",
     img: "/assets/uploads/Picsart_26-03-09_14-36-07-141-3.png",
     categoryColor: "oklch(0.68 0.22 30)",
+  },
+  {
+    id: 4,
+    title: "Class 10th – How to Study Science?",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/1000001866-1.png",
+    categoryColor: "oklch(0.70 0.22 285)",
+  },
+  {
+    id: 5,
+    title: "Class 10 – Complete Civics Marathon",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/1000001865-2.png",
+    categoryColor: "oklch(0.68 0.22 248)",
+  },
+  {
+    id: 6,
+    title: "Class 12 Physics – Chapter 1 Explained",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/1000001864-3.png",
+    categoryColor: "oklch(0.70 0.20 50)",
+  },
+  {
+    id: 7,
+    title: "Class 10/12 Syllabus 2026-27 – Study Strategy for New Session",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/0cbfc45b-0d64-4fab-b10d-b1cc99f15110-1.png",
+    categoryColor: "oklch(0.70 0.22 220)",
+  },
+  {
+    id: 8,
+    title:
+      "Class 10 & 12 Syllabus 2026-27 CBSE – Study Strategy for New Session",
+    category: "YouTube Thumbnail",
+    img: "/assets/uploads/d2d67932-dde1-48e7-96a6-481c590bec72-2.png",
+    categoryColor: "oklch(0.68 0.22 160)",
   },
 ];
 
@@ -802,6 +824,7 @@ function PortfolioCard({
 function PortfolioSection() {
   const [headerRef, headerInView] = useInView<HTMLDivElement>();
   const [noteRef, noteInView] = useInView<HTMLDivElement>();
+  const [folderOpen, setFolderOpen] = useState(false);
 
   return (
     <section
@@ -830,10 +853,124 @@ function PortfolioSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((project, i) => (
-            <PortfolioCard key={project.id} project={project} delay={i * 0.1} />
-          ))}
+        {/* Folder card */}
+        <button
+          type="button"
+          data-ocid="portfolio.folder.toggle"
+          aria-expanded={folderOpen}
+          onClick={() => setFolderOpen((o) => !o)}
+          className="w-full cursor-pointer rounded-2xl p-5 flex items-center gap-5 transition-all duration-300 hover:scale-[1.01] select-none mb-4 text-left"
+          style={{
+            background: "oklch(0.12 0.015 275 / 0.85)",
+            border: "1px solid oklch(0.75 0.18 55 / 0.45)",
+            backdropFilter: "blur(16px)",
+            boxShadow: folderOpen
+              ? "0 0 32px oklch(0.75 0.18 55 / 0.15)"
+              : "none",
+          }}
+        >
+          {/* Folder icon */}
+          <div
+            className="shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
+            style={{
+              background: "oklch(0.75 0.18 55 / 0.15)",
+              border: "1px solid oklch(0.75 0.18 55 / 0.35)",
+            }}
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z"
+                fill="oklch(0.75 0.18 55)"
+                opacity="0.9"
+              />
+            </svg>
+          </div>
+
+          {/* Text */}
+          <div className="flex-1 min-w-0">
+            <p
+              className="font-display font-bold text-lg"
+              style={{ color: "oklch(0.92 0.05 275)" }}
+            >
+              Educational Niche
+            </p>
+            <p
+              className="text-sm mt-0.5"
+              style={{ color: "oklch(0.65 0.08 275)" }}
+            >
+              6 Thumbnails · YouTube
+            </p>
+          </div>
+
+          {/* Fan preview */}
+          <div className="relative shrink-0 w-24 h-14 hidden sm:block">
+            {PROJECTS.slice(0, 3).map((p, i) => (
+              <img
+                key={p.id}
+                src={p.img}
+                alt={p.title}
+                className="absolute w-16 h-11 object-cover rounded-lg border-2"
+                style={{
+                  right: `${i * 14}px`,
+                  top: `${i === 1 ? -4 : i === 2 ? 4 : 0}px`,
+                  transform: `rotate(${i === 0 ? 0 : i === 1 ? -6 : 6}deg)`,
+                  zIndex: 3 - i,
+                  borderColor: "oklch(0.75 0.18 55 / 0.5)",
+                  boxShadow: "0 2px 8px oklch(0 0 0 / 0.4)",
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Chevron */}
+          <div
+            className="shrink-0 ml-2 transition-transform duration-300"
+            style={{
+              transform: folderOpen ? "rotate(180deg)" : "rotate(0deg)",
+              color: "oklch(0.75 0.18 55)",
+            }}
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <title>Toggle folder</title>
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+        </button>
+
+        {/* Expandable grid */}
+        <div
+          style={{
+            overflow: "hidden",
+            maxHeight: folderOpen ? "2000px" : "0px",
+            opacity: folderOpen ? 1 : 0,
+            transition:
+              "max-height 0.55s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease",
+          }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-2 pb-4">
+            {PROJECTS.map((project, i) => (
+              <PortfolioCard
+                key={project.id}
+                project={project}
+                delay={i * 0.1}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Many more note */}
